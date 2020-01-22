@@ -6,7 +6,7 @@ def weight_considered(height,width,length,gross_weight):
         weight = gross_weight
         return weight
     else:
-        if GrossWeight > volumetric:
+        if gross_weight > volumetric:
             weight = gross_weight
             return weight 
         else:
@@ -64,7 +64,7 @@ def commission_inclusion(product_value,classification):
 
 
 
-def Menu():
+def menu():
 
     product_value = float(input("infome o valor do produto" ))
     height = int(input("infome a altura do produto em cm" ))
@@ -85,4 +85,4 @@ def Menu():
 
     print("***********************************************************")
     
-Menu()
+menu()
