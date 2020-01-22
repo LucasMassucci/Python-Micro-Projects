@@ -1,13 +1,13 @@
-def weight_considered(height,width,length,GrossWeight):
+def weight_considered(height,width,length,gross_weight):
 
     volumetric = ((height*width*length)/6000)
 
     if volumetric <= 5:
-        weight = GrossWeight
+        weight = gross_weight
         return weight
     else:
         if GrossWeight > volumetric:
-            weight = GrossWeight
+            weight = gross_weight
             return weight 
         else:
             weight = volumetric
@@ -46,7 +46,7 @@ def shipping_cost(product_value,weight):
 
 
 def commission_inclusion(product_value,classification):
-    porcentagem = 0
+    percentage = 0
     your_worth = product_value
 
     if classification == True:
@@ -59,9 +59,9 @@ def commission_inclusion(product_value,classification):
     
     if product_value < 120:
         product_value += 5
-        return product_value
-    else:
-        return product_value
+        
+    return product_value
+
 
 
 def Menu():
@@ -70,8 +70,8 @@ def Menu():
     height = int(input("infome a altura do produto em cm" ))
     width = int(input("infome a Largura do produto em cm" ))
     length = int(input("infome a Comprimento do produto em cm" ))
-    GrossWeight = float(input("informe o peso Bruto do Produto em Kg" ))
-    weight = weight_considered(height,width,length,GrossWeight)
+    gross_weight = float(input("informe o peso Bruto do Produto em Kg" ))
+    weight = weight_considered(height,width,length,gross_weight)
 
     premium_ad = commission_inclusion(product_value,True)
     classic_ad = commission_inclusion(product_value,False)
