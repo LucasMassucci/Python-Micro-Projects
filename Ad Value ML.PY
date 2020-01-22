@@ -45,16 +45,16 @@ def shipping_cost(product_value,weight):
         return cost
 
 
-def inclusao_de_comissao(product_value,classificação):
+def commission_inclusion(product_value,classification):
     porcentagem = 0
     your_worth = product_value
 
-    if classificação == True:
-        porcentagem = 16
+    if classification == True:
+        percentage = 16
     else:
-        porcentagem = 11
+        percentage = 11
 
-    while (product_value - ((product_value*porcentagem)/100) <= your_worth):
+    while (product_value - ((product_value*percentage)/100) <= your_worth):
         product_value += 0.01
     
     if product_value < 120:
@@ -62,19 +62,6 @@ def inclusao_de_comissao(product_value,classificação):
         return product_value
     else:
         return product_value
- 
-
-
-def ClassicAd(product_value):
-    classificação = False
-    product_value = inclusao_de_comissao(product_value,classificação)
-
-    if product_value < 120:
-        product_value += 5
-        return product_value
-    else:
-        return product_value
-
 
 
 def Menu():
@@ -86,8 +73,8 @@ def Menu():
     GrossWeight = float(input("informe o peso Bruto do Produto em Kg" ))
     weight = weight_considered(height,width,length,GrossWeight)
 
-    premium_ad = inclusao_de_comissao(product_value,True)
-    classic_ad = inclusao_de_comissao(product_value,False)
+    premium_ad = commission_inclusion(product_value,True)
+    classic_ad = commission_inclusion(product_value,False)
     freight = shipping_cost(product_value,weight)
     
     print("")
